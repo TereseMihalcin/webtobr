@@ -41,3 +41,11 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+---
+
+#### Notes
+
+custom cursor https://stackoverflow.com/questions/67259317/changing-cursor-for-project
+
