@@ -1,0 +1,107 @@
+---
+import trash from '../assets/trash-gif.gif';
+import trashclosed from '../assets/trash-closed.png';
+import trashopen from '../assets/trash-open.png';
+import ghost from '../assets/ghost.png';
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Transparency</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>	
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://yoururlhere" >
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="Transparency" >
+	</head>
+	<body>
+		<div class="container mt-5">
+			<div class="row align-items-center justify-content-center">
+				<div class="city">
+					<div id="trash" class="trash closed">
+						<img src={trash.src} />
+					</div>
+					<div id="open" class="trash open">
+						<img src={trashopen.src} />
+					</div>
+					<div id="ghost" class="trash ghost">
+						<img src={ghost.src} />
+					</div>
+					<div id="note" class="note">
+						thanks boo
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<style>
+
+	.city {
+		background: url('../assets/background.png');
+		/* background: tan; */
+		width: 832px;
+  		height: 832px;
+	}
+	.trash img{
+		position: absolute;
+		left: 50%;
+		/* bottom: -100px; */
+		transform: translate(-50%,50%);
+		margin: 0 auto;
+		margin-top: 300px;
+	}
+	.trash.open img {
+		cursor: pointer;
+		z-index: 9999;
+		filter: drop-shadow(10px 10px 10px #000000);
+	}
+	.trash.closed img {
+		filter: drop-shadow(10px 10px 10px #000000);
+	}
+	.trash.open, .ghost, .note {
+		display: none;
+	}
+	.note {
+		position: absolute;
+		font-family: 'Comic Sans MS', cursive, sans-serif;
+		font-size: 24px;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+		margin-left: 200px;
+  		margin-top: 300px;
+	}
+</style>
+
+<script>
+
+
+	var trash = document.getElementById('trash');
+	var open = document.getElementById('open');
+	var ghost = document.getElementById('ghost');
+	var note = document.getElementById('note');
+
+
+	trash!.addEventListener('click', () => {
+		//alert('You clicked the trash!');
+		console.log(trash);
+		trash!.style.display = 'none';
+		open!.style.display = 'block';
+		ghost!.style.display = 'block';
+		note!.style.display = 'block';
+		ghost?.animate([
+			{ transform: 'translateY(-20px)', opacity: 0.8, offset: 0 },
+			{ transform: 'translateY(-300px)', opacity: 0, offset: 1 }
+		], {
+			duration: 5000,
+			easing: 'ease-out',
+			fill: 'forwards'
+		});	
+	});
+</script>
