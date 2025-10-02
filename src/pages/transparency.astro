@@ -42,17 +42,14 @@ import ghost from '../assets/ghost.png';
 </html>
 
 <style>
-
 	.city {
 		background: url('../assets/background.png');
-		/* background: tan; */
 		width: 832px;
   		height: 832px;
 	}
 	.trash img{
 		position: absolute;
 		left: 50%;
-		/* bottom: -100px; */
 		transform: translate(-50%,50%);
 		margin: 0 auto;
 		margin-top: 300px;
@@ -80,16 +77,12 @@ import ghost from '../assets/ghost.png';
 </style>
 
 <script>
-
-
 	var trash = document.getElementById('trash');
 	var open = document.getElementById('open');
 	var ghost = document.getElementById('ghost');
 	var note = document.getElementById('note');
 
-
 	trash!.addEventListener('click', () => {
-		//alert('You clicked the trash!');
 		console.log(trash);
 		trash!.style.display = 'none';
 		open!.style.display = 'block';
