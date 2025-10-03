@@ -1,5 +1,8 @@
 ---
+import Map from '../components/map.astro';
+import maplibregl from "maplibre-gl";
 ---
+<!doctype html>
 <html>
 	<head>
 	   <meta charset="utf-8" />
@@ -8,24 +11,67 @@
 	   <meta name="generator" content={Astro.generator} />
 	   <title>Mapbox GL JS map</title>
 	   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-	   
-	   <link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet">
+		<link href="https://unpkg.com/maplibre-gl@^5.8.0/dist/maplibre-gl.css" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>	
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.netlify.app/maps/" >
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="Maps" >
 	   <style>
 	   body { margin: 0; padding: 0; }
-	   #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+	   #map { height: 600px; max-width:100%; max-height: 100%; }
 	   </style>
 	</head>
 	<body>
-	   <div id='map' style='width: 400px; height: 300px;'></div>
+		
+		<div class="container mt-3">
+			<div class="row flex-direction-column">
+				<h1>Some public outdoor volleyball nets in RI</h1>
+				<p>Ran out of time.<br>Have not used mapLibre before but i've been meaning to.<br> Eventually I would love to make a directory with all outdoor volleyball nets for public use in RI, and make it look nice etc.</p>
+			</div>
+			<div class="row justify-content-center">
+				<div id='map'></div>
+			</div>
+		</div>
+	   
 	   <script>
-		   mapboxgl.accessToken = 'pk.eyJ1IjoidGVyZXNlbWloYWxjaW4iLCJhIjoiY21nOXN0YTRlMDlyczJscHgxOHc1Y3FmMCJ9.wOqTCzaRciLp1qJ5LoEuuQ';
-		   const map = new mapboxgl.Map({
-			   container: 'map', // container ID
-			   style: 'mapbox://styles/mapbox/streets-v12', // style URL
-			   center: [-74.5, 40], // starting position [lng, lat]
-			   zoom: 9, // starting zoom
-		   });
-	   </script>
+		const style = {
+			"version": 8,
+				"sources": {
+				"osm": {
+						"type": "raster",
+						"tiles": ["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"],
+						"tileSize": 256,
+				"attribution": "&copy; OpenStreetMap Contributors",
+				"maxzoom": 19
+				}
+			},
+			"layers": [
+				{
+				"id": "osm",
+				"type": "raster",
+				"source": "osm" // This must match the source key above
+				}
+			]
+			};
+
+// Initialise the map
+const map = new maplibregl.Map({
+  container: 'map',
+  style: style,
+  center: [288.5, 41.7],
+  zoom: 8.8
+});
+let marker = new maplibregl.Marker().setLngLat([288.65, 41.7525]).addTo(map); 
+    let lngLat = marker.getLngLat();
+    map.on("click", () => {
+          new maplibregl.Popup().setHTML("There's one around here").setLngLat(lngLat).addTo(map);
+    });
+
+// Add the navigation control
+map.addControl(new maplibregl.NavigationControl());
+	</script>
 	</body>
-	<script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+	<script src="https://unpkg.com/maplibre-gl@^5.8.0/dist/maplibre-gl.js"></script>
+
 	</html>
