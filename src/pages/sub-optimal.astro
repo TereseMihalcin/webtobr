@@ -1,0 +1,80 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Sub-optimal</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>	
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.netlify.app/sub-optimal/" >
+		<script src="../assets/sub-optimal.js"></script>
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="sub-optimal" >
+		
+	</head>
+	<body>
+		<div class="question container mt-5">
+			<div class="row align-items-center justify-content-center">
+				<h1 class="header mt-5">
+					POV type="date" doesn't exist
+				</h1>
+				<div class="mt-5 mb-5">
+					<form id="form"
+					method="post" onsubmit="submit(event)">
+						<div class="row g-3 align-items-center justify-content-center">
+							<div class="col-auto">
+								<label for="month" class="col-form-label">Month</label>
+								<input type="text" id="month" class="form-control">
+							</div>
+							<div class="col-auto">
+								<label for="day" class="col-form-label">Day</label>
+								<input type="text" id="day" class="form-control">
+							</div>
+							<div class="col-auto">
+								<label for="year" class="col-form-label">Year</label>
+								<input type="text" id="year" class="form-control">
+							</div>
+						</div>
+						<div class=" mt-2 row g-3 align-items-center justify-content-center">
+							<div class="col-auto">
+								<input type="submit" value="Submit">
+							</div>
+							
+						</div>
+					</form>
+				</div>
+				
+			</div>
+			<div class="row align-items-center justify-content-center">
+				<div id="result" class="mt-5 mb-5 result">
+					<h2>YAY</h2>
+					<h3>*Confetti explosion here*</h3>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>
+
+<style>
+	.question {
+		background: lightblue;
+	}
+	.header {
+		color: black;
+		text-align: center;
+	}
+	#result {
+		display: none;
+	}
+	.result h2, .result h3 {
+		text-align: center;
+		color: purple;
+	}
+	
+</style>
