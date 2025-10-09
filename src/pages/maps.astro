@@ -1,26 +1,23 @@
 ---
 import Map from '../components/map.astro';
 import maplibregl from "maplibre-gl";
+import GenericHeader from '../components/header.astro';
+
 ---
 <!doctype html>
 <html>
 	<head>
-	   <meta charset="utf-8" />
-	   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	   <meta name="viewport" content="width=device-width" />
-	   <meta name="generator" content={Astro.generator} />
-	   <title>Mapbox GL JS map</title>
-	   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+		<GenericHeader/>
+	   	<title>Mapbox GL JS map</title>
+	   	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 		<link href="https://unpkg.com/maplibre-gl@^5.8.0/dist/maplibre-gl.css" rel="stylesheet" />
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>	
 		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.netlify.app/maps/" >
 		<link rel="octo:octothorpes" href="weirdweboctober" >
 		<link rel="octo:octothorpes" href="Maps" >
-	   <style>
-	   body { margin: 0; padding: 0; }
-	   #map { height: 600px; max-width:100%; max-height: 100%; }
-	   </style>
+		<style>
+		body { margin: 0; padding: 0; }
+		#map { height: 600px; max-width:100%; max-height: 100%; }
+		</style>
 	</head>
 	<body>
 		
