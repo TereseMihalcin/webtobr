@@ -1,0 +1,111 @@
+---
+import GenericHeader from '../components/header.astro';
+import Crazy from '../assets/crazy.png';
+import Cross from '../assets/cross-legged.png';
+import Meow from '../assets/meow.png';
+import Sitting from '../assets/sitting.png';
+---
+
+<html lang="en">
+	<head>
+		<GenericHeader/>
+		<title>Don't Blink!</title>
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.netlify.app/blink/" >
+		<script src="../assets/blink.js"></script>
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="Blink" >
+	</head>
+	<body>
+		<div class="margin-right"></div>
+		<div class="margin"></div>
+		<div class="container mt-3 justify-content-center align-items-center" style="height: 100vh; background-color: lightgrey;">
+			<h1>Don't Blink!</h1>
+			<h2>My cat has the freakin zoomies...she's going to zoom by at lightning speed. It's up to you to choose which cat you just saw</h2>
+			<p>Press Question 1 when you're ready</p>
+			<div class="d-flex justify-content-center align-items-center">
+				<input id="start" type=button onclick="startAnimation()" value='Question 1'>
+				<input id="next" type=button onclick="startAnimation()" value='Question 2' disabled>
+				<input type=button onclick="window.location.reload()" value='Reset'>
+			</div>
+			<div class="d-flex justify-content-center align-items-center mt-2">
+				<div hidden id='score'></div>
+			</div>
+			<div class="">
+				<div class="images">
+					<img id="first-ahri" src={Sitting.src} alt="blink1" style="width:auto;height:200px;">
+					<img id="second-ahri" src={Crazy.src} alt="blink2" style="width:auto;height:200px;">
+				</div>
+			</div>
+			<div class="boxes row justify-content-center align-items-center gap-5">
+				<div class="col-auto box border border-primary">
+					<img class="" id="first-left" src={Sitting.src} alt="blink1" onclick=isCorrect()>
+					<img class="" id="second-left" src={Meow.src} alt="blink2" onclick=isCorrect()>
+
+				</div>
+				<div class="col-auto box border border-primary">
+					<img class="" id="first-right" src={Cross.src} alt="blink1" onclick=isCorrect()>
+					<img class="" id="second-right" src={Crazy.src} alt="blink2" onclick=isCorrect()>
+				</div>
+			</div>
+
+			
+		</div>
+	</body>
+</html>
+
+<style>
+	h1,h2,p {
+		position:relative;
+		z-index: 999;
+	}
+	.box {
+		height: 200px;
+		width: 200px;
+	}
+	.box img {
+		max-height: 100%;
+		max-width: 100%;
+		width: auto;
+		display: none;
+		margin: auto;
+	}
+	.box img.red {
+		filter: drop-shadow(0 0 0.75rem crimson);
+	}
+	.box img.yellow:hover {
+		filter: drop-shadow(0 0 0.75rem yellow);
+	}
+	.box img.green {
+		filter: drop-shadow(0 0 0.75rem green);
+	}
+	.boxes {
+		margin-top: 35vh;
+	}
+	.images img {
+		position: absolute;
+		margin-top: 100px;
+  		left: 0;
+	}
+	.margin {
+		width: 12%;
+		height: 100vh;
+		background-color:white;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 99;
+	}
+	.margin-right {
+		width: 12%;
+		height: 100vh;
+		background-color: white;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 99;
+	}
+	#score {
+		font-size: 40px;
+	}
+	
+</style>
