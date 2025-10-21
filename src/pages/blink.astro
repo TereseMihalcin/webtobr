@@ -36,7 +36,13 @@ import Sitting from '../assets/sitting.png';
 					<img id="second-ahri" src={Crazy.src} alt="blink2" style="width:auto;height:200px;">
 				</div>
 			</div>
-			<div class="boxes row justify-content-center align-items-center gap-5">
+			<div class="boxes row justify-content-center align-items-center">
+				<div class="col-auto">
+					<h3 id="question-text">Which cat did you see?</h3>
+				</div>
+
+			</div>
+			<div class="row justify-content-center align-items-center gap-5">
 				<div class="col-auto box border border-primary">
 					<img class="" id="first-left" src={Sitting.src} alt="blink1" onclick=isCorrect()>
 					<img class="" id="second-left" src={Meow.src} alt="blink2" onclick=isCorrect()>
