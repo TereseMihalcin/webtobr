@@ -1,0 +1,45 @@
+---
+import GenericHeader from '../components/header.astro';
+import { Image } from 'astro:assets';
+import Ahri1 from '../assets/sitting.png';
+import Ahri2 from '../assets/crazy.png';
+import Ahri3 from '../assets/cross-legged.png';
+import Ahri4 from '../assets/meow.png';
+---
+
+<html lang="en">
+	<head>
+		<GenericHeader/>
+		<title>My cat per second</title>
+		<script src="../assets/counter.js"></script>
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.netlify.app/counter/" >
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="Counter" >	
+	</head>
+	<body>
+		<h1 class="text-center m-4">Counter</h1>
+		<div class="d-flex justify-content-center" id="s">
+			<img >
+			<Image src="/crazy.png" alt="cat1" width="50" height="50" id="seconds" />
+			<!-- <img src={Ahri1.src} alt="cat1">
+			<img src={Ahri2.src} alt="cat1">
+			<img src={Ahri3.src} alt="cat1">
+			<img src={Ahri4.src} alt="cat1"> -->
+
+		</div>
+		
+	</body>
+</html>
+
+<style>
+	.container {
+		background: lightblue;
+	}
+	img {
+		position: absolute;
+
+		height: 200px;
+		width: auto;
+	}
+	
+</style>
