@@ -8,7 +8,7 @@ console.log('test');
 // console.log("trs"+imageContainer);
 // imageContainer.innerHTML = `<img src=${ahri} alt="sitting ahri">`;
 
-let images = ['/sitting.png', '/meow.png', '/crazy.png'];
+let images = ['/sitting.png', '/meow.png', '/cross-legged.png', '/crazy.png'];
 
 let index = 0;
 const imgElement = document.querySelector('#seconds');
