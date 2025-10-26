@@ -1,0 +1,52 @@
+---
+import GenericHeader from '../components/header.astro';
+---
+
+<html lang="en">
+	<head>
+		<GenericHeader/>
+		<title>Texture</title>
+		<script src="../assets/texture.js"></script>
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.netlify.app/texture/" >
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="Texture" >	
+	</head>
+	<body>
+		<h1 class="text-center m-4">Spheres of texture</h1>
+		<div class="d-flex justify-content-center mt-4">
+			<button id="metal" onclick="metal()">metal</button>
+			<button id="rusty" onclick="rusty()">rusty</button>
+			<button id="brick" onclick="brick()">brick</button>
+			<button id="rocks" onclick="rocks()">rocks</button>
+		</div>
+		<div class="d-flex justify-content-center" id="s">
+			<img src="" width="500" id="circle" />
+		</div>
+		<p class="mt-4" >Created using ambientCG.com, licensed under the Creative Commons CC0 1.0 Universal License.</p>
+	</body>
+</html>
+
+<style>
+	body {
+		background-color: #daa946;
+	}
+	.container {
+		background: lightblue;
+	}
+	p {
+		text-align: center;
+		margin-top: 20px;
+		font-size: 14px;
+		color: #555;
+	}
+	button {
+		margin: 10px;
+		padding: 10px 20px;
+		font-size: 16px;
+		border: none;
+		border-radius: 5px;
+		background-color: #111;
+		color: white;
+		cursor: pointer;
+	}
+</style>
