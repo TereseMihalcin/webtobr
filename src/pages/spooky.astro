@@ -16,7 +16,7 @@ import { Image } from 'astro:assets';
 		<div class='container-fluid p-0 mt-5'>
 			<div class="d-flex justify-content-between align-items-center" >
 				<Image src="/jeff.png" alt="cat1" width="50" height="50" id="s" />
-				<button><h1 class="text-center m-4" id="says">Jeff says reaaaahhh</h1></button>
+				<button><h1 class="text-center m-2" id="says">Jeff says reaaaahhh</h1></button>
 				
 				<Image src="/jeff.png" alt="cat1" width="50" height="50" id="e" />
 			</div>
@@ -53,6 +53,17 @@ import { Image } from 'astro:assets';
 	}
 	button:hover {
 		background: #ae7edb;
+	}
+
+	@media only screen and (max-width: 768px) {
+		img {
+			height: 10em;
+			max-height: 70vh;
+			width: auto;
+		}
+		h1 {
+			font-size: .7em;
+		}
 	}
 
 	/* #says:hover {
