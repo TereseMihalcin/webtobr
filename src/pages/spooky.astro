@@ -1,0 +1,63 @@
+---
+import GenericHeader from '../components/header.astro';
+import { Image } from 'astro:assets';
+---
+
+<html lang="en">
+	<head>
+		<GenericHeader/>
+		<title>Counter</title>
+		<script src="../assets/spooky.js"></script>
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.netlify.app/spooky/" >
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="Spooky" >	
+	</head>
+	<body>
+		<div class='container-fluid p-0 mt-5'>
+			<div class="d-flex justify-content-between align-items-center" >
+				<Image src="/jeff.png" alt="cat1" width="50" height="50" id="s" />
+				<button><h1 class="text-center m-4" id="says">Jeff says reaaaahhh</h1></button>
+				
+				<Image src="/jeff.png" alt="cat1" width="50" height="50" id="e" />
+			</div>
+			<div class="d-flex justify-content-end" >
+				
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Eater&display=swap');
+	body {
+		background: #d0781a;
+		font-family: "Eater", serif;
+	}
+	#s {
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+	}
+	img {
+		height: 40em;
+		width: auto;
+	}
+	button {
+		background: #a570d7;
+		border: 2px solid black;
+	}
+	button:hover {
+		background: #ae7edb;
+	}
+
+	/* #says:hover {
+		opacity: 1;
+		animation: fade 2s linear 1;
+	}
+	@keyframes fade {
+		50% { opacity: 0; }
+	} */
+
+	
+</style>
