@@ -1,0 +1,275 @@
+---
+import GenericHeader from '../components/header.astro';
+import Crazy from '../assets/reveal.png';
+---
+
+<html lang="en">
+	<head>
+		<GenericHeader/>
+		<title>Guess the guy</title>
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.netlify.app/reveal/" >
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="Reveal" >
+	</head>
+	<body>
+
+		<div class="container text-center mt-5">
+			<h1>Guess the guy</h1>
+			<h3>Which 8bit character is behind the wall?</h3>
+			<p>One you hit start, the image will start to be revealed, choose your answer timely!</p>
+			<div class="btn btn-lg btn-success" id="startButton">Start</div>
+		</div>
+
+		<div class="container mt-5">
+			<div class="row justify-content-center flex-direction-row gap-3 mb-3">
+				<div class="btn btn-primary p-2" id="answer1">Voltorb</div>
+				<div class="btn btn-primary p-2" id="answer2">Goomba</div>
+				<div class="btn btn-primary p-2" id="answer3">Waddle Dee</div>
+				<div class="btn btn-primary p-2" id="answer4">Donkey Kong</div>
+				<div class="btn btn-primary p-2" id="answer5">Link</div>
+			</div>
+
+			<div class="row">
+				<div class="image text-center">
+					<img src={Crazy.src} alt="Reveal Image" />
+				</div>
+				<div class="boxes text-center">
+					<div class="box" id="box1"></div>
+					<div class="box" id="box2"></div>
+					<div class="box" id="box3"></div>
+					<div class="box" id="box4"></div>
+					<div class="box" id="box5"></div>
+					<div class="box" id="box6"></div>
+					<div class="box" id="box7"></div>
+					<div class="box" id="box8"></div>
+					<div class="box" id="box9"></div>
+					<div class="box" id="box10"></div>
+
+					<div class="box" id="box11"></div>
+					<div class="box" id="box12"></div>
+					<div class="box" id="box13"></div>
+					<div class="box" id="box14"></div>
+					<div class="box" id="box15"></div>
+					<div class="box" id="box16"></div>
+					<div class="box" id="box17"></div>
+					<div class="box" id="box18"></div>
+					<div class="box" id="box19"></div>
+					<div class="box" id="box20"></div>
+
+					<div class="box" id="box21"></div>
+					<div class="box" id="box22"></div>
+					<div class="box" id="box23"></div>
+					<div class="box" id="box24"></div>
+					<div class="box" id="box25"></div>
+					<div class="box" id="box26"></div>
+					<div class="box" id="box27"></div>
+					<div class="box" id="box28"></div>
+					<div class="box" id="box29"></div>
+					<div class="box" id="box30"></div>
+
+					<div class="box" id="box1"></div>
+					<div class="box" id="box32"></div>
+					<div class="box" id="box33"></div>
+					<div class="box" id="box34"></div>
+					<div class="box" id="box35"></div>
+					<div class="box" id="box36"></div>
+					<div class="box" id="box37"></div>
+					<div class="box" id="box38"></div>
+					<div class="box" id="box39"></div>
+					<div class="box" id="box40"></div>
+
+					<div class="box" id="box41"></div>
+					<div class="box" id="box42"></div>
+					<div class="box" id="box43"></div>
+					<div class="box" id="box44"></div>
+					<div class="box" id="box45"></div>
+					<div class="box" id="box46"></div>
+					<div class="box" id="box47"></div>
+					<div class="box" id="box48"></div>
+					<div class="box" id="box49"></div>
+					<div class="box" id="box50"></div>
+
+					<div class="box" id="box51"></div>
+					<div class="box" id="box52"></div>
+					<div class="box" id="box53"></div>
+					<div class="box" id="box54"></div>
+					<div class="box" id="box55"></div>
+					<div class="box" id="box56"></div>
+					<div class="box" id="box57"></div>
+					<div class="box" id="box58"></div>
+					<div class="box" id="box59"></div>
+					<div class="box" id="box60"></div>
+
+					<div class="box" id="box61"></div>
+					<div class="box" id="box62"></div>
+					<div class="box" id="box63"></div>
+					<div class="box" id="box64"></div>
+					<div class="box" id="box65"></div>
+					<div class="box" id="box66"></div>
+					<div class="box" id="box67"></div>
+					<div class="box" id="box68"></div>
+					<div class="box" id="box69"></div>
+					<div class="box" id="box70"></div>
+
+					<div class="box" id="box71"></div>
+					<div class="box" id="box72"></div>
+					<div class="box" id="box73"></div>
+					<div class="box" id="box74"></div>
+					<div class="box" id="box75"></div>
+					<div class="box" id="box76"></div>
+					<div class="box" id="box77"></div>
+					<div class="box" id="box78"></div>
+					<div class="box" id="box79"></div>
+					<div class="box" id="box80"></div>
+
+					<div class="box" id="box81"></div>
+					<div class="box" id="box82"></div>
+					<div class="box" id="box83"></div>
+					<div class="box" id="box84"></div>
+					<div class="box" id="box85"></div>
+					<div class="box" id="box86"></div>
+					<div class="box" id="box87"></div>
+					<div class="box" id="box88"></div>
+					<div class="box" id="box89"></div>
+					<div class="box" id="box90"></div>
+
+					<div class="box" id="box1"></div>
+					<div class="box" id="box92"></div>
+					<div class="box" id="box93"></div>
+					<div class="box" id="box94"></div>
+					<div class="box" id="box95"></div>
+					<div class="box" id="box96"></div>
+					<div class="box" id="box97"></div>
+					<div class="box" id="box98"></div>
+					<div class="box" id="box99"></div>
+					<div class="box" id="box100"></div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
+
+<style>
+	.container {
+		background: white;
+	}
+	.image img {
+		max-width: 130px;
+	}
+	.boxes {
+		/* ideally make this box same height as image */
+		position: relative;
+		top: -126px;
+		z-index: 1;
+		height: 126px;
+		width: 155px;
+		margin:auto;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.box {
+      background-color: rgb(19, 19, 19);
+	  opacity: 100%;
+	  width: 10%;
+	  height: 10%;
+	}
+	.btn {
+		width: fit-content;
+	}
+</style>
+
+<script type="text/javascript">
+
+var startButton = document.getElementById('startButton');
+var answer1 = document.getElementById('answer1');
+var answer2 = document.getElementById('answer2');
+var answer3 = document.getElementById('answer3');
+var answer4 = document.getElementById('answer4');
+var answer5 = document.getElementById('answer5');
+// arr of boxes and ids
+var boxes = document.querySelectorAll('.box');
+var boxids = [];
+for (var i = 0; i < boxes.length; i++) {
+	boxids[i] = boxes[i].id;
+}
+
+// Start
+startButton.addEventListener('click', function() {
+
+	// get start time
+	startTime = new Date().getTime();
+
+	// shuffle boxes and set opacity to 0 one by one
+	var shuffled = [];
+	shuffled = shuffle(boxids);
+
+	for (var i = 0; i < shuffled.length; i++) {
+		var box = document.getElementById(shuffled[i]);
+		console.log(box);
+		setTimeout(function(box) {
+			box.style.opacity = 0;
+		}, i * 1000, box);
+	}
+
+	// activate answer buttons
+	answer1.addEventListener('click', function() {
+		checkAnswer('Voltorb');
+	});
+	answer2.addEventListener('click', function() {
+		checkAnswer('Goomba');
+	});
+	answer3.addEventListener('click', function() {
+		checkAnswer('Waddle Dee');
+	});
+	answer4.addEventListener('click', function() {
+		checkAnswer('Donkey Kong');
+	});
+	answer5.addEventListener('click', function() {
+		checkAnswer('Link');
+	});
+
+	
+});
+
+// Shuffle boxes
+// Source - https://stackoverflow.com/a/18806417
+// Posted by Ben Jackson, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-10-02, License - CC BY-SA 3.0
+function shuffle(array) {
+    var i = array.length,
+        j = 0,
+        temp;
+
+    while (i--) {
+
+        j = Math.floor(Math.random() * (i+1));
+
+        // swap randomly chosen element with current element
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+
+    }
+    return array;
+}
+
+// Check answer
+function checkAnswer(answer) {
+	if (answer === 'Waddle Dee') {
+		// display time taken to answer
+		var endTime = new Date().getTime();
+		var millis = endTime - startTime;
+		var seconds = ((millis % 60000) / 1000);
+		alert('Correct! :: Time taken: ' + seconds + ' seconds');
+
+		// set opacity to 0
+		boxes.forEach(function(box) {
+			box.style.opacity = 0;
+		});
+	} else {
+		alert('Incorrect!');
+	}
+}
+
+</script>
