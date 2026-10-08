@@ -1,0 +1,67 @@
+---
+import GenericHeader from '../components/header.astro';
+import Banana from '../assets/banana.png';
+import Sticker from '../assets/sticker.png';
+---
+
+<html lang="en">
+	<head>
+		<GenericHeader/>
+		<title>Peel the organic nanner sticker OFF</title>
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.mihalc.in/reveal/" >
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="organic" >
+		<link rel="stylesheet" href="/peel/peel.css" />
+		
+
+	</head>
+	<body>
+		<div class="container mt-5">
+			<div class="row justify-content-center flex-direction-row mb-3">
+				<img class="" src={Banana.src} alt="banana" />
+				<div id="peel" class="peel">
+					<div class="peel-top"><img class="sticker" src={Sticker.src} alt="sticker" /></div>
+					<div class="peel-back"><img class="" src={Banana.src} alt="banana" /></div>
+					<div class="peel-bottom"></div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+<style>
+	body {
+		background: rgb(99, 113, 171);
+	}
+	img {
+		max-width: 100%;
+	}
+	#peel {
+		position: relative;
+		top: -150px;
+		left: 0;
+		width: 90px;
+		height: 90px;
+	}
+	@media (max-width: 768px) {
+		#peel {
+			top: -70px;
+			width: 40px;
+			height: 40px;
+		}
+	}
+	.peel-bottom {
+		opacity: 0;
+	}
+	.peel-back {
+		color: #fff;
+	}
+</style>
+<script is:inline src="/peel/peel.js"></script>
+<script is:inline>
+var p = new Peel('#peel');
+p.handleDrag(function(evt, x, y) {
+  this.setPeelPosition(x, y);
+});
+</script>
