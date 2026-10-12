@@ -1,0 +1,120 @@
+---
+import GenericHeader from '../components/header.astro';
+import Pumpkin from '../assets/pumpkin.gif';
+import Candle from '../assets/candlestick.gif';
+import Flame from '../assets/flame.gif';
+---
+
+<html lang="en">
+	<head>
+		<GenericHeader/>
+		<title>light the pumpkin</title>
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.mihalc.in/pointy/" >
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="Pointy" >
+	</head>
+	<body>
+		<div class="container mt-5 body" id="body">
+			<div class="row justify-content-center flex-direction-row mb-3 align-items-end">
+				<div class="col-12 text-center mb-3">
+					<h1>Light the Pumpkin for me?</h1>
+					<h3>Watch out for the pointy teeth</h3>
+				</div>
+				<div class="col-12 col-sm-4 text-center">
+					<img id="candle" src={Candle.src} alt="candle" />
+				</div>
+				<div class="col-12 col-sm-8 text-center">
+					<div class="pumpkin-wrap">
+						<img class="pumpkin" src={Pumpkin.src} alt="pumpkin" />
+						<img class="flame" src={Flame.src} alt="flame" />
+						<div class="tealight"></div>
+						<div class="teeth1"></div>
+						<div class="teeth2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<style>
+	body {
+		background: #E3F6D5;
+	}
+	.pumpkin-wrap {
+		position: relative;
+		display: inline-block;
+		width: 70%;
+	}
+	img.pumpkin {
+		display: block;
+		width: 100%;
+	}
+	/* left/top/width are % of the pumpkin image, so they scale with it */
+	img.flame {
+		position: absolute;
+		width: 15%;
+		left: 40%;
+		top: 60%;
+		opacity: 0%;
+	}
+	img.flame.lit {
+		opacity: 100% !important;
+	}
+	.tealight {
+		position: absolute;
+		width: 7%;
+		height: 7%;
+		left: 44%;
+  		top: 66%;
+		opacity: 0%;
+	}
+	#body.lit {
+  		cursor: url('/flame-cursor.png') 24 17, auto;
+	}
+	/* teeth hitboxes */
+	.teeth1 {
+		position: absolute;
+		width: 20%;
+		height: 10%;
+		left: 38%;
+  		top: 55%;
+		opacity: 0%;
+	}
+	.teeth2 {
+		position: absolute;
+		width: 20%;
+		height: 10%;
+		left: 37%;
+  		top: 74%;
+		opacity: 0%;
+	}
+</style>
+
+<script type="text/javascript">
+	var candle = document.getElementById('candle');
+	const body = document.querySelector('.body');
+	var flame = document.querySelector('.flame');
+	var tealight = document.querySelector('.tealight');
+
+
+	candle.addEventListener('click', function() {
+		body.classList.add('lit');
+	});
+
+	tealight.addEventListener('click', function() {
+		// only light the pumpkin if the cursor is still carrying the flame
+		if (body.classList.contains('lit')) {
+			flame.classList.add('lit');
+		}
+	});
+
+	// touching the teeth blows out the cursor flame
+	document.querySelectorAll('.teeth1, .teeth2').forEach(function(teeth) {
+		teeth.addEventListener('mouseenter', function() {
+			body.classList.remove('lit');
+		});
+	});
+
+
+</script>
