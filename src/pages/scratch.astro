@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets';
+import GenericHeader from '../components/header.astro';
+import Ripper from '../assets/ripper.png';
+import Basket from '../assets/basket.png';
+import Corner from '../assets/corner.png';
+import Above from '../assets/above.png';
+---
+
+<html lang="en">
+	<head>
+		<GenericHeader/>
+		<title>My cat likes to rip</title>
+		<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://webtobr.mihalc.in/scratch/" >
+		<link rel="octo:octothorpes" href="weirdweboctober" >
+		<link rel="octo:octothorpes" href="Scratch" >
+	</head>
+	<body>
+		<div class="container mt-5 body" id="body">
+			<div class="row justify-content-center flex-direction-row mb-3 align-items-end">
+				<div class="col-12 text-center mb-3">
+					<h1>My cat likes to rip</h1>
+				</div>
+			</div>
+			<div class="row mb-5">
+				<div class="col-12 mb-3">
+					<h3>Click to see some Examples:</h3>
+				</div>
+				<div class="col">
+					<button class="btn btn-lg btn-dark" id="cornerBtn">Yikes</button>
+					<Image src={Corner}  alt="A couch corner ripped by cat" id="corner" class="hide" />
+				</div>
+				<div class="col">
+					<button class="btn btn-lg btn-dark" id="basketBtn">Wow</button>
+					<Image src={Basket} alt="A basket ripped by cat" id="basket" class="hide" />
+				</div>
+				<div class="col">
+					<button class="btn btn-lg btn-dark" id="aboveBtn">Why</button>
+					<Image src={Above} alt="A couch corner ripped by cat above cat scratcher" id="above" class="hide" />
+				</div>
+				<div class="col">
+					<button class="btn btn-lg btn-dark" id="ripperBtn">Oh my</button>
+					<Image src={Ripper} alt="Cat scratcher ripped by cat" id="ripper" class="hide" />
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<style>
+	body {
+		background: #E3F6D5;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		display: none;
+		padding-top: 10px;
+	}
+	img.show {
+		display: block;
+	}
+</style>
+
+<script type="text/javascript">
+
+var cornerButton = document.getElementById('cornerBtn');
+var basketButton = document.getElementById('basketBtn');
+var aboveButton = document.getElementById('aboveBtn');
+var ripperButton = document.getElementById('ripperBtn');
+
+var corner = document.getElementById('corner');
+var basket = document.getElementById('basket');
+var above = document.getElementById('above');
+var ripper = document.getElementById('ripper');
+
+cornerButton.addEventListener('click', function() {
+	if(!corner.classList.contains('show')){
+		corner.classList.add('show');
+	}else if( corner.classList.contains('show')){
+		corner.classList.remove('show');
+	}
+});
+
+basketButton.addEventListener('click', function() {
+	if(!basket.classList.contains('show')){
+		basket.classList.add('show');
+	}else if( basket.classList.contains('show')){
+		basket.classList.remove('show');
+	}
+});
+
+aboveButton.addEventListener('click', function() {
+	if(!above.classList.contains('show')){
+		above.classList.add('show');
+	}else if( above.classList.contains('show')){
+		above.classList.remove('show');
+	}
+});
+
+ripperButton.addEventListener('click', function() {
+	if(!ripper.classList.contains('show')){
+		ripper.classList.add('show');
+	}else if( ripper.classList.contains('show')){
+		ripper.classList.remove('show');
+	}
+});
+
+
+</script>
